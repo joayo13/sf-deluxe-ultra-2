@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bps03827q7dep"]
+
+[ext_resource type="Texture2D" uid="uid://cc133u6inx5wt" path="res://weapons/ranged_weapons/bullets/laser_round.png" id="1_1grap"]
+[ext_resource type="Script" path="res://laser_round.gd" id="1_30vkl"]
+
+[sub_resource type="Gradient" id="Gradient_6fht3"]
+colors = PackedColorArray(0.921569, 0.921569, 0.921569, 1, 0.705882, 0.12549, 0.164706, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uuxnp"]
+radius = 2.0
+
+[node name="LaserRound" type="Node2D"]
+script = ExtResource("1_30vkl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1grap")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 12
+lifetime = 0.2
+randomness = 0.41
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2(0, 1)
+spread = 52.65
+gravity = Vector2(0, 0)
+initial_velocity_max = 20.0
+radial_accel_min = 52.53
+radial_accel_max = 52.53
+color_ramp = SubResource("Gradient_6fht3")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uuxnp")
+
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

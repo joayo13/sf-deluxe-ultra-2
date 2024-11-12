@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://lk2vw3cu6yct"]
+
+[ext_resource type="Script" path="res://player/billy/scenes/hurtbox.gd" id="1_gt32o"]
+
+[node name="Hurtbox" type="Area2D"]
+script = ExtResource("1_gt32o")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

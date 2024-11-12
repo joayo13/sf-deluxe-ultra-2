@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpf7lpkecajsj"]
+
+[ext_resource type="Script" path="res://player/scripts/player.gd" id="1_npgok"]
+[ext_resource type="Texture2D" uid="uid://c7w6d0oc4xju8" path="res://player/sprites/player-idle.png" id="2_jitpm"]
+[ext_resource type="Script" path="res://player/scenes/fart_button.gd" id="3_0yydr"]
+[ext_resource type="PackedScene" uid="uid://pm8vqw2814wj" path="res://player/scenes/fart_button.tscn" id="3_d47by"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dmfx"]
+size = Vector2(9, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lli6"]
+atlas = ExtResource("2_jitpm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwxjl"]
+atlas = ExtResource("2_jitpm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j72kt"]
+atlas = ExtResource("2_jitpm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fyxop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lli6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwxjl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lli6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwxjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j72kt")
+}],
+"loop": true,
+"name": &"sliding",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+wall_min_slide_angle = 1.74533
+script = ExtResource("1_npgok")
+
+[node name="FartButton" parent="." instance=ExtResource("3_d47by")]
+top_level = true
+texture_normal = null
+script = ExtResource("3_0yydr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_5dmfx")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fyxop")
+animation = &"sliding"
+autoplay = "idle"
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="FartButton" to="." method="_on_fart_button_pressed"]
