@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/billy/scripts/player.gd" id="1_npgok"]
 [ext_resource type="Texture2D" uid="uid://bqe7kmpjqj8wl" path="res://player/billy/sprites/fartso_shooting.png" id="2_n5187"]
 [ext_resource type="PackedScene" uid="uid://csgqsgkkupe3t" path="res://ui/popups/scenes/floating_text.tscn" id="3_h5rq5"]
-[ext_resource type="Texture2D" uid="uid://b2i5b7bfmrwxc" path="res://player/billy/sprites/billy-flying.png" id="3_p0wu6"]
+[ext_resource type="Texture2D" uid="uid://d1iultmrn1nlf" path="res://player/billy/sprites/fartso.png" id="3_mpka3"]
 [ext_resource type="PackedScene" uid="uid://nwdm5d7fqktt" path="res://weapon_slot.tscn" id="4_cim7x"]
 [ext_resource type="PackedScene" uid="uid://lk2vw3cu6yct" path="res://hurtbox.tscn" id="6_50x5i"]
 [ext_resource type="PackedScene" uid="uid://b05b3xtw1fnij" path="res://health_component.tscn" id="7_agd2y"]
@@ -15,7 +15,7 @@ size = Vector2(7, 4)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_p0wu6")
+"texture": ExtResource("3_mpka3")
 }],
 "loop": true,
 "name": &"fly",
@@ -46,21 +46,21 @@ position = Vector2(0, -4)
 
 [node name="Farticles" type="CPUParticles2D" parent="."]
 amount = 30
-lifetime = 1.2
+lifetime = 1.4
 randomness = 0.4
-lifetime_randomness = 0.2
+lifetime_randomness = 0.55
 emission_shape = 1
-emission_sphere_radius = 0.4
+emission_sphere_radius = 2.99
 direction = Vector2(0, -1)
-spread = 39.55
+spread = 21.37
 gravity = Vector2(0, 50)
 initial_velocity_min = 20.0
-initial_velocity_max = 30.0
+initial_velocity_max = 40.0
 color = Color(0.34902, 0.756863, 0.207843, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fyxop")
-animation = &"fly"
+animation = &"shoot"
 autoplay = "fly"
 
 [node name="FloatingText" parent="." instance=ExtResource("3_h5rq5")]

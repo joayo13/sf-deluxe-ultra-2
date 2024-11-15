@@ -5,15 +5,17 @@ extends CharacterBody2D
 @export var deceleration: float = 5.0  # Rate of deceleration
 @export var min_interval: float = 2.0  # Minimum time before changing direction
 @export var max_interval: float = 3.0  # Maximum time before changing direction
-
+@onready var hurtbox: Hurtbox = $Hurtbox
 @onready var direction_change_timer: Timer = $DirectionChangeTimer
+@onready var floating_text: FloatingText = $FloatingText
 
 # Set up the initial target speed and direction
 var target_speed: float = 0.0
 var direction: int = 0
 
 func _ready() -> void:
-	# Start the timer with a random interval# Randomly returns -1 or 1
+	if hurtbox != null:
+		hurtbox.hit.connect(hit)
 	var right = randi_range(0, 1)
 	if right:
 		direction = 1
@@ -21,6 +23,11 @@ func _ready() -> void:
 		direction = -1
 	direction_change_timer.start(randf_range(min_interval, max_interval))
 
+func hit(attack: Attack):
+	if(attack.damage):
+		print(attack.damage)
+		floating_text.createFloatingTextDamage(attack.damage)
+		
 func _process(delta: float) -> void:
 	# Determine the target speed based on the current direction
 	target_speed = direction * max_speed

@@ -8,9 +8,9 @@
 script = ExtResource("1_r6033")
 layers = Array[int]([2])
 
+[node name="LaserGun" parent="." instance=ExtResource("1_8r567")]
+
 [node name="Shotgun" type="Node2D" parent="."]
 script = ExtResource("3_y2p6c")
 projectile_speed = 4.0
 projectile_time = 0.4
-
-[node name="LaserGun" parent="." instance=ExtResource("1_8r567")]

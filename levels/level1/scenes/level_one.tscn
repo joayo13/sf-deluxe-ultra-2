@@ -84,16 +84,34 @@ position = Vector2(4, -378)
 position = Vector2(-13, -207)
 
 [node name="Brownoser4" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(7, -543)
+position = Vector2(-60, -2219)
 
 [node name="Brownoser5" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-44, -588)
+position = Vector2(-71, -1473)
 
 [node name="Brownoser6" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(29, -502)
+position = Vector2(-161, -2465)
 
 [node name="Brownoser7" parent="." instance=ExtResource("4_0a1l2")]
 position = Vector2(-27, -299)
 
 [node name="Brownoser8" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-38, -460)
+position = Vector2(-57, -2786)
+
+[node name="Brownoser9" parent="." instance=ExtResource("4_0a1l2")]
+position = Vector2(37, -854)
+
+[node name="Brownoser10" parent="." instance=ExtResource("4_0a1l2")]
+position = Vector2(-158, -3045)
+
+[node name="Brownoser11" parent="." instance=ExtResource("4_0a1l2")]
+position = Vector2(-56, -1932)
+
+[node name="Brownoser12" parent="." instance=ExtResource("4_0a1l2")]
+position = Vector2(-4, -631)
+
+[node name="Brownoser13" parent="." instance=ExtResource("4_0a1l2")]
+position = Vector2(-7, -481)
+
+[node name="Brownoser14" parent="." instance=ExtResource("4_0a1l2")]
+position = Vector2(-57, -1056)

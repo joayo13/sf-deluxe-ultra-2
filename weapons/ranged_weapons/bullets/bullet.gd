@@ -6,9 +6,12 @@ extends Node2D
 @onready var area_2d: Area2D = $Area2D
 var projectile_time: float
 var projectile_speed: float
-var projectile_damage: float
+var projectile_damage_min: float
+var projectile_damage_max: float
+var projectile_crit_chance: float
+var projectile_crit_multiplier: float = 2
 var projectile_angle: float = 0.0  # Angle in degrees
-var pierce_amount: float 
+var projectile_pierce_amount: float 
 var direction: Vector2;
 var layers: Array
 

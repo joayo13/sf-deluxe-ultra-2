@@ -3,6 +3,6 @@
 [ext_resource type="Script" path="res://camera/scripts/global_camera.gd" id="1_lop36"]
 
 [node name="GlobalCamera" type="Camera2D"]
-offset = Vector2(0, -40)
+offset = Vector2(0, -80)
 zoom = Vector2(3, 3)
 script = ExtResource("1_lop36")
