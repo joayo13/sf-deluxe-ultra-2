@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://nwdm5d7fqktt"]
+
+[ext_resource type="Script" path="res://weapons/scripts/weapon_slot.gd" id="1_0hu66"]
+[ext_resource type="PackedScene" uid="uid://cm2gon5nr768j" path="res://weapons/ranged_weapons/laser_gun.tscn" id="2_gyj6s"]
+[ext_resource type="Script" path="res://weapons/ranged_weapons/shotgun.gd" id="3_8ed8r"]
+
+[node name="WeaponSlot" type="Node2D"]
+script = ExtResource("1_0hu66")
+layers = Array[int]([2])
+
+[node name="LaserGun" parent="." instance=ExtResource("2_gyj6s")]
+projectile_time = 1.0
+projectile_speed = 3.0
+projectile_damage_min = 10
+projectile_damage_max = 20
+projectile_crit_chance = 5.0
+
+[node name="Shotgun" type="Node2D" parent="."]
+script = ExtResource("3_8ed8r")

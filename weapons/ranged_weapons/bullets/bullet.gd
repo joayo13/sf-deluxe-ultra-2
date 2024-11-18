@@ -27,7 +27,7 @@ func _ready() -> void:
 			area_2d.set_collision_mask_value(layer, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void: 
+func _process(_delta: float) -> void: 
 	position += direction * projectile_speed
 	
 	

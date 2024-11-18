@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://mobs/brownoser/scripts/brownoser.gd" id="1_iu6x3"]
 [ext_resource type="Texture2D" uid="uid://csg3hiujpeill" path="res://mobs/brownoser/sprites/brownoser_spritesheet.png" id="2_jtifd"]
-[ext_resource type="PackedScene" uid="uid://nwdm5d7fqktt" path="res://weapon_slot.tscn" id="3_rf5bw"]
+[ext_resource type="PackedScene" uid="uid://nwdm5d7fqktt" path="res://weapons/scenes/weapon_slot.tscn" id="3_rf5bw"]
 [ext_resource type="PackedScene" uid="uid://csgqsgkkupe3t" path="res://ui/popups/scenes/floating_text.tscn" id="4_7dq3h"]
-[ext_resource type="PackedScene" uid="uid://lk2vw3cu6yct" path="res://hurtbox.tscn" id="5_w536s"]
-[ext_resource type="PackedScene" uid="uid://b05b3xtw1fnij" path="res://health_component.tscn" id="6_inwbd"]
+[ext_resource type="PackedScene" uid="uid://lk2vw3cu6yct" path="res://components/scenes/hurtbox.tscn" id="5_w536s"]
+[ext_resource type="PackedScene" uid="uid://b05b3xtw1fnij" path="res://components/scenes/health_component.tscn" id="6_inwbd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e5ym7"]
 

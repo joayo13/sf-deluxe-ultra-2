@@ -21,15 +21,28 @@ func _input(event: InputEvent) -> void:
 		var player_screen_coordinates = self.get_global_transform_with_canvas().origin
 		var angle_between_player_and_event = player_screen_coordinates.angle_to_point(event.position)
 		var angle_degrees = rad_to_deg(angle_between_player_and_event) * -1
-		get_node("WeaponSlot").shoot(angle_degrees)
+		weapon_slot.shoot(angle_degrees)
 		
-func shoot():
-	animated_sprite_2d.animation = "shoot"
+func shoot(angle):
+	assert(angle)
+	# List of target angles to compare against
+	var target_angles = [-90, 0, 90, 180]
+	
+	# Find the closest angle
+	var closest_angle = target_angles[0]
+	var min_diff = abs(angle - closest_angle)
+	for target in target_angles:
+		var diff = abs(angle - target)
+		if diff < min_diff:
+			min_diff = diff
+			closest_angle = target 
+	print("Angle: ", angle, " (Closest to: ", closest_angle, ")")
+	animated_sprite_2d.rotation_degrees = -closest_angle
 func hit(attack):
 	var health_component = get_node("HealthComponent") as HealthComponent
 	health_component.take_damage(attack)
 	print("owie")
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var accelerometer_x = Input.get_accelerometer().x
 	var target_velocity_x = 0.0
 	if accelerometer_x < -0.7 || Input.is_action_pressed("ui_left"):

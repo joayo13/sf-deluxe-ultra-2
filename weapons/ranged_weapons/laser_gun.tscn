@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm2gon5nr768j"]
+
+[ext_resource type="Script" path="res://player/billy/scenes/laser_gun.gd" id="1_x1k6r"]
+
+[node name="LaserGun" type="Node2D"]
+script = ExtResource("1_x1k6r")
