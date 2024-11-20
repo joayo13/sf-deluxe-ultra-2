@@ -1,20 +1,20 @@
 [gd_scene load_steps=10 format=3 uid="uid://cpf7lpkecajsj"]
 
 [ext_resource type="Script" path="res://player/billy/scripts/player.gd" id="1_npgok"]
+[ext_resource type="Texture2D" uid="uid://djog6l4sdkl8k" path="res://player/billy/sprites/SF1000.png" id="2_5vu2b"]
 [ext_resource type="PackedScene" uid="uid://csgqsgkkupe3t" path="res://ui/popups/scenes/floating_text.tscn" id="3_h5rq5"]
-[ext_resource type="Texture2D" uid="uid://dwy1mow3k146j" path="res://player/billy/sprites/player.png" id="3_kogni"]
 [ext_resource type="PackedScene" uid="uid://nwdm5d7fqktt" path="res://weapons/scenes/weapon_slot.tscn" id="4_cim7x"]
 [ext_resource type="PackedScene" uid="uid://lk2vw3cu6yct" path="res://components/scenes/hurtbox.tscn" id="6_50x5i"]
 [ext_resource type="PackedScene" uid="uid://b05b3xtw1fnij" path="res://components/scenes/health_component.tscn" id="7_agd2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_degn2"]
-size = Vector2(10, 8)
+size = Vector2(8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fyxop"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_kogni")
+"texture": ExtResource("2_5vu2b")
 }],
 "loop": true,
 "name": &"fly",
@@ -22,13 +22,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma8x0"]
-size = Vector2(10, 8)
+size = Vector2(8, 8)
 
 [node name="Player" type="CharacterBody2D"]
 wall_min_slide_angle = 1.74533
 script = ExtResource("1_npgok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_degn2")
 
 [node name="Farticles" type="CPUParticles2D" parent="."]
@@ -43,7 +44,7 @@ spread = 21.37
 gravity = Vector2(0, 50)
 initial_velocity_min = 20.0
 initial_velocity_max = 40.0
-color = Color(1, 0.188235, 1, 1)
+color = Color(0.34902, 0.756863, 0.207843, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fyxop")
@@ -56,6 +57,7 @@ position = Vector2(0, -6)
 [node name="Hurtbox" parent="." instance=ExtResource("6_50x5i")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+visible = false
 shape = SubResource("RectangleShape2D_ma8x0")
 
 [node name="HealthComponent" parent="." instance=ExtResource("7_agd2y")]

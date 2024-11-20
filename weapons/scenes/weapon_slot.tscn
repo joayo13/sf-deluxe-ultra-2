@@ -9,8 +9,8 @@ script = ExtResource("1_0hu66")
 layers = Array[int]([2])
 
 [node name="LaserGun" parent="." instance=ExtResource("2_gyj6s")]
-projectile_time = 1.0
-projectile_speed = 3.0
+projectile_time = 2.0
+projectile_speed = 4.0
 projectile_damage_min = 10
 projectile_damage_max = 20
 projectile_crit_chance = 5.0

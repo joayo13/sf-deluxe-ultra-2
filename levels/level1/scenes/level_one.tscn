@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://3y84d7e6he5p"]
 
-[ext_resource type="Texture2D" uid="uid://b3gl6dmype1um" path="res://levels/level1/sprites/sewer-background.png" id="1_gslpk"]
 [ext_resource type="PackedScene" uid="uid://cpf7lpkecajsj" path="res://player/billy/scenes/player.tscn" id="2_qjh11"]
 [ext_resource type="PackedScene" uid="uid://cuk8tdkhka3mt" path="res://collectibles/coin/scenes/coin.tscn" id="3_bknki"]
-[ext_resource type="PackedScene" uid="uid://bnt6vdgey4yqs" path="res://mobs/brownoser/scenes/brownoser.tscn" id="4_0a1l2"]
+[ext_resource type="PackedScene" uid="uid://bnt6vdgey4yqs" path="res://mobs/bug_soldier/scenes/bug_soldier.tscn" id="4_0a1l2"]
 [ext_resource type="PackedScene" uid="uid://ck6hky8a0dg3c" path="res://camera/scenes/global_camera.tscn" id="5_qurwi"]
+[ext_resource type="Texture2D" uid="uid://4p24kgo10qv6" path="res://levels/level1/sprites/black-background.png" id="5_tcgyx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fyxcm"]
 bounce = 0.4
@@ -15,11 +15,13 @@ size = Vector2(128, 20)
 [node name="LevelOne" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-repeat_size = Vector2(0, 252)
-repeat_times = 7
+light_mask = 2
+repeat_size = Vector2(0, 256)
+repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-texture = ExtResource("1_gslpk")
+light_mask = 2
+texture = ExtResource("5_tcgyx")
 
 [node name="Player" parent="." instance=ExtResource("2_qjh11")]
 

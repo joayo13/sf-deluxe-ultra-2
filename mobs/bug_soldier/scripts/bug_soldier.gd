@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var direction_change_timer: Timer = $DirectionChangeTimer
 @onready var floating_text: FloatingText = $FloatingText
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d_timer: Timer = $Sprite2D/Sprite2DTimer
 
 # Set up the initial target speed and direction
 var target_speed: float = 0.0
@@ -27,6 +29,9 @@ func hit(attack: Attack):
 	if(attack.damage):
 		print(attack.damage)
 		floating_text.createFloatingTextDamage(attack.damage)
+		sprite_2d.frame = randi_range(1,6)
+		sprite_2d_timer.start()
+		
 		
 func _process(delta: float) -> void:
 	# Determine the target speed based on the current direction
@@ -47,3 +52,7 @@ func _on_direction_change_timer_timeout() -> void:
 	direction *= -1
 	direction_change_timer.start(randf_range(min_interval, max_interval))
 	get_node("WeaponSlot").shoot(-90)
+
+
+func _on_sprite_2d_timer_timeout() -> void:
+	sprite_2d.frame = 0

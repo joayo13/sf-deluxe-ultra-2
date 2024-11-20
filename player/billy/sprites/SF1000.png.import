@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3gl6dmype1um"
-path="res://.godot/imported/sewer-background.png-bbd0a276bdb085d4ad7ea9bcbbaced4c.ctex"
+uid="uid://djog6l4sdkl8k"
+path="res://.godot/imported/SF1000.png-ae8ee38f5b4faf39a8aa3139596bb98b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/level1/sprites/sewer-background.png"
-dest_files=["res://.godot/imported/sewer-background.png-bbd0a276bdb085d4ad7ea9bcbbaced4c.ctex"]
+source_file="res://player/billy/sprites/SF1000.png"
+dest_files=["res://.godot/imported/SF1000.png-ae8ee38f5b4faf39a8aa3139596bb98b.ctex"]
 
 [params]
 

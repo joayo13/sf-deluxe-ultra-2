@@ -23,21 +23,8 @@ func _input(event: InputEvent) -> void:
 		var angle_degrees = rad_to_deg(angle_between_player_and_event) * -1
 		weapon_slot.shoot(angle_degrees)
 		
-func shoot(angle):
-	assert(angle)
-	# List of target angles to compare against
-	var target_angles = [-90, 0, 90, 180]
-	
-	# Find the closest angle
-	var closest_angle = target_angles[0]
-	var min_diff = abs(angle - closest_angle)
-	for target in target_angles:
-		var diff = abs(angle - target)
-		if diff < min_diff:
-			min_diff = diff
-			closest_angle = target 
-	print("Angle: ", angle, " (Closest to: ", closest_angle, ")")
-	animated_sprite_2d.rotation_degrees = -closest_angle
+func shoot(_angle):
+	pass
 func hit(attack):
 	var health_component = get_node("HealthComponent") as HealthComponent
 	health_component.take_damage(attack)

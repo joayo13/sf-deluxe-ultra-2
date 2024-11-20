@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0hd53hxs6d4"
-path="res://.godot/imported/brownoser.png-356a34be626d4752bfbc06bf6c5a9a4d.ctex"
+uid="uid://4p24kgo10qv6"
+path="res://.godot/imported/black-background.png-d7fb2bcb438d8c205a94f0ef5a8a6595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mobs/brownoser/sprites/brownoser.png"
-dest_files=["res://.godot/imported/brownoser.png-356a34be626d4752bfbc06bf6c5a9a4d.ctex"]
+source_file="res://levels/level1/sprites/black-background.png"
+dest_files=["res://.godot/imported/black-background.png-d7fb2bcb438d8c205a94f0ef5a8a6595.ctex"]
 
 [params]
 
