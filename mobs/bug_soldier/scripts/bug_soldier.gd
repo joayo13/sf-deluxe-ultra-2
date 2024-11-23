@@ -51,7 +51,7 @@ func _on_direction_change_timer_timeout() -> void:
 	# Change direction and restart the timer with a new random interval
 	direction *= -1
 	direction_change_timer.start(randf_range(min_interval, max_interval))
-	get_node("WeaponSlot").shoot(-90)
+	get_node("RangedWeapon").shoot(-90)
 
 
 func _on_sprite_2d_timer_timeout() -> void:

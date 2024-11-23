@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var weapon_slot: Node2D = $WeaponSlot
+@onready var ranged_weapon: Node2D = $RangedWeapon
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var farticles: CPUParticles2D = $Farticles
 @onready var hurtbox: Area2D = $Hurtbox
@@ -12,8 +12,8 @@ var deceleration = 5.0    # Rate of deceleration
 func _ready():
 	if hurtbox != null:
 		hurtbox.hit.connect(hit)
-	if weapon_slot != null:
-		weapon_slot.shooting.connect(shoot)
+	if ranged_weapon != null:
+		ranged_weapon.shooting.connect(play_shoot_anim)
 	else:
 		print("weapon_slot is null, unable to connect.")
 func _input(event: InputEvent) -> void:
@@ -21,9 +21,9 @@ func _input(event: InputEvent) -> void:
 		var player_screen_coordinates = self.get_global_transform_with_canvas().origin
 		var angle_between_player_and_event = player_screen_coordinates.angle_to_point(event.position)
 		var angle_degrees = rad_to_deg(angle_between_player_and_event) * -1
-		weapon_slot.shoot(angle_degrees)
+		ranged_weapon.shoot(angle_degrees)
 		
-func shoot(_angle):
+func play_shoot_anim(_angle):
 	pass
 func hit(attack):
 	var health_component = get_node("HealthComponent") as HealthComponent
@@ -35,11 +35,14 @@ func _process(_delta: float) -> void:
 	if accelerometer_x < -0.7 || Input.is_action_pressed("ui_left"):
 		animated_sprite_2d.flip_h = true
 		target_velocity_x = accelerometer_x * max_speed_x
+		target_velocity_x = -max_speed_x
 		velocity.x = lerp(velocity.x, target_velocity_x, 0.1)
 	elif accelerometer_x > 0.7 || Input.is_action_pressed("ui_right"):
 		animated_sprite_2d.flip_h = false
 		target_velocity_x = accelerometer_x * max_speed_x
+		target_velocity_x = max_speed_x
 		velocity.x = lerp(velocity.x, target_velocity_x, 0.1)
+		
 	
 	else:
 		if(velocity.x != 0):

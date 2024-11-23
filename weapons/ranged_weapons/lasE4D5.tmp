@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bps03827q7dep"]
 
 [ext_resource type="Texture2D" uid="uid://cc133u6inx5wt" path="res://weapons/ranged_weapons/bullets/laser_round.png" id="1_1grap"]
-[ext_resource type="Script" path="res://weapons/ranged_weapons/BaseBulletStrategy.gd" id="1_30vkl"]
+[ext_resource type="Script" path="res://weapons/ranged_weapons/laser_round.gd" id="1_30vkl"]
 
 [sub_resource type="Gradient" id="Gradient_6fht3"]
 colors = PackedColorArray(0.921569, 0.921569, 0.921569, 1, 0.705882, 0.12549, 0.164706, 1)

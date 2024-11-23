@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://player/billy/scripts/player.gd" id="1_npgok"]
 [ext_resource type="Texture2D" uid="uid://djog6l4sdkl8k" path="res://player/billy/sprites/SF1000.png" id="2_5vu2b"]
 [ext_resource type="PackedScene" uid="uid://csgqsgkkupe3t" path="res://ui/popups/scenes/floating_text.tscn" id="3_h5rq5"]
-[ext_resource type="Script" path="res://weapons/scripts/RangedWeapon.gd" id="6_5f7y5"]
 [ext_resource type="PackedScene" uid="uid://lk2vw3cu6yct" path="res://components/scenes/hurtbox.tscn" id="6_50x5i"]
+[ext_resource type="Script" path="res://player/billy/scenes/player_ranged_weapon.gd" id="6_jr4jk"]
 [ext_resource type="PackedScene" uid="uid://b05b3xtw1fnij" path="res://components/scenes/health_component.tscn" id="7_agd2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_degn2"]
@@ -63,14 +63,7 @@ shape = SubResource("RectangleShape2D_ma8x0")
 [node name="HealthComponent" parent="." instance=ExtResource("7_agd2y")]
 health = 69.0
 
-[node name="RangedWeapon" type="Node2D" parent="."]
-script = ExtResource("6_5f7y5")
-projectile_time = 2.0
-projectile_speed = 4.0
-projectile_damage_min = 1
-projectile_damage_max = 2
-projectile_crit_chance = 20.0
-projectile_crit_multiplier = 3
-layers = Array[int]([2])
+[node name="PlayerRangedWeapon" type="Node2D" parent="."]
+script = ExtResource("6_jr4jk")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
