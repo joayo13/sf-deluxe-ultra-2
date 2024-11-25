@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8skevtjonasl"
-path="res://.godot/imported/bug.png-9fe43d3dbfe4c6a8fbbff1557b4453a0.ctex"
+uid="uid://7ghmlw3bpphr"
+path="res://.godot/imported/bug-hurt.png-69dbe05701aa40578e3cfb5c5dd12d27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mobs/bug_soldier/bug.png"
-dest_files=["res://.godot/imported/bug.png-9fe43d3dbfe4c6a8fbbff1557b4453a0.ctex"]
+source_file="res://mobs/bug_soldier/sprites/bug-hurt.png"
+dest_files=["res://.godot/imported/bug-hurt.png-69dbe05701aa40578e3cfb5c5dd12d27.ctex"]
 
 [params]
 

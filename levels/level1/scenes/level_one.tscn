@@ -1,119 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://3y84d7e6he5p"]
+[gd_scene load_steps=5 format=3 uid="uid://3y84d7e6he5p"]
 
 [ext_resource type="PackedScene" uid="uid://cpf7lpkecajsj" path="res://player/billy/scenes/player.tscn" id="2_qjh11"]
-[ext_resource type="PackedScene" uid="uid://cuk8tdkhka3mt" path="res://collectibles/coin/scenes/coin.tscn" id="3_bknki"]
-[ext_resource type="PackedScene" uid="uid://bnt6vdgey4yqs" path="res://mobs/bug_soldier/scenes/bug_soldier.tscn" id="4_0a1l2"]
+[ext_resource type="PackedScene" uid="uid://bnt6vdgey4yqs" path="res://mobs/bug_soldier/scenes/bug_soldier.tscn" id="4_1rfei"]
 [ext_resource type="PackedScene" uid="uid://ck6hky8a0dg3c" path="res://camera/scenes/global_camera.tscn" id="5_qurwi"]
 [ext_resource type="Texture2D" uid="uid://4p24kgo10qv6" path="res://levels/level1/sprites/black-background.png" id="5_tcgyx"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fyxcm"]
-bounce = 0.4
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qam7"]
-size = Vector2(128, 20)
 
 [node name="LevelOne" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-light_mask = 2
 repeat_size = Vector2(0, 256)
-repeat_times = 5
+repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-light_mask = 2
 texture = ExtResource("5_tcgyx")
+centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_qjh11")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-physics_material_override = SubResource("PhysicsMaterial_fyxcm")
-
-[node name="Panel" type="Panel" parent="StaticBody2D"]
-offset_left = -64.0
-offset_top = 4.0
-offset_right = 64.0
-offset_bottom = 40.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1, 14)
-shape = SubResource("RectangleShape2D_3qam7")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(69, -41)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_3qam7")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-69, -45)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_3qam7")
-
-[node name="Coin" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(10, -175)
-
-[node name="Coin2" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(7, -191)
-
-[node name="Brownoser" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(0, -101)
+position = Vector2(65, 141.667)
 
 [node name="GlobalCamera" parent="." instance=ExtResource("5_qurwi")]
+position = Vector2(63, 90.6667)
 
-[node name="Coin3" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(8, -208)
+[node name="BugSoldier" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(44, -20)
 
-[node name="Coin4" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(8, -243)
+[node name="BugSoldier2" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(59, -249.333)
 
-[node name="Coin5" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(10, -250)
+[node name="BugSoldier3" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(58, -181.333)
 
-[node name="Coin6" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(6, -259)
+[node name="BugSoldier4" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(57, -89.3333)
 
-[node name="Coin7" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(11, -233)
-
-[node name="Coin8" parent="." instance=ExtResource("3_bknki")]
-position = Vector2(10, -221)
-
-[node name="Brownoser2" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(4, -378)
-
-[node name="Brownoser3" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-13, -207)
-
-[node name="Brownoser4" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-60, -2219)
-
-[node name="Brownoser5" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-71, -1473)
-
-[node name="Brownoser6" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-161, -2465)
-
-[node name="Brownoser7" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-27, -299)
-
-[node name="Brownoser8" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-57, -2786)
-
-[node name="Brownoser9" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(37, -854)
-
-[node name="Brownoser10" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-158, -3045)
-
-[node name="Brownoser11" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-56, -1932)
-
-[node name="Brownoser12" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-4, -631)
-
-[node name="Brownoser13" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-7, -481)
-
-[node name="Brownoser14" parent="." instance=ExtResource("4_0a1l2")]
-position = Vector2(-57, -1056)
+[node name="BugSoldier5" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(56, 63)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc133u6inx5wt"
-path="res://.godot/imported/laser_round.png-acb6a0e046f6ca3285066ad5474a6c2a.ctex"
+uid="uid://c8skevtjonasl"
+path="res://.godot/imported/bug.png-0501ae352dc0d084f519cb1070b0b3a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/ranged_weapons/bullets/laser_round.png"
-dest_files=["res://.godot/imported/laser_round.png-acb6a0e046f6ca3285066ad5474a6c2a.ctex"]
+source_file="res://mobs/bug_soldier/sprites/bug.png"
+dest_files=["res://.godot/imported/bug.png-0501ae352dc0d084f519cb1070b0b3a4.ctex"]
 
 [params]
 

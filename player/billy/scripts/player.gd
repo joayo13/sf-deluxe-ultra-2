@@ -3,11 +3,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var farticles: CPUParticles2D = $Farticles
 @onready var hurtbox: Area2D = $Hurtbox
-
 var max_speed_y = 50
 var max_speed_x = 25.0 
-var acceleration = 5.0    # Rate of acceleration
-var deceleration = 5.0    # Rate of deceleration
 
 func _ready():
 	if hurtbox != null:
