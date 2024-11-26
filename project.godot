@@ -25,10 +25,12 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=360
-window/size/viewport_height=640
+window/size/viewport_width=180
+window/size/viewport_height=360
 window/size/resizable=false
-window/stretch/mode="viewport"
+window/size/window_width_override=360
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
 window/handheld/orientation=1
@@ -55,4 +57,4 @@ pointing/emulate_touch_from_mouse=true
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.18359, 0.18359, 0.18359, 1)

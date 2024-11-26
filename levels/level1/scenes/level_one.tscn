@@ -3,26 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://cpf7lpkecajsj" path="res://player/billy/scenes/player.tscn" id="2_qjh11"]
 [ext_resource type="PackedScene" uid="uid://bnt6vdgey4yqs" path="res://mobs/bug_soldier/scenes/bug_soldier.tscn" id="4_1rfei"]
 [ext_resource type="PackedScene" uid="uid://ck6hky8a0dg3c" path="res://camera/scenes/global_camera.tscn" id="5_qurwi"]
-[ext_resource type="Texture2D" uid="uid://4p24kgo10qv6" path="res://levels/level1/sprites/black-background.png" id="5_tcgyx"]
+[ext_resource type="Texture2D" uid="uid://cwndov61h5cus" path="res://levels/level1/sprites/black-background.png" id="5_tcgyx"]
 
 [node name="LevelOne" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-repeat_size = Vector2(0, 256)
-repeat_times = 2
+scroll_offset = Vector2(-90, -300)
+repeat_size = Vector2(0, 450)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("5_tcgyx")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_qjh11")]
-position = Vector2(65, 141.667)
 
 [node name="GlobalCamera" parent="." instance=ExtResource("5_qurwi")]
-position = Vector2(63, 90.6667)
+offset = Vector2(0, -120)
+zoom = Vector2(1, 1)
 
 [node name="BugSoldier" parent="." instance=ExtResource("4_1rfei")]
-position = Vector2(44, -20)
+position = Vector2(-28, -223)
 
 [node name="BugSoldier2" parent="." instance=ExtResource("4_1rfei")]
 position = Vector2(59, -249.333)
@@ -34,4 +34,4 @@ position = Vector2(58, -181.333)
 position = Vector2(57, -89.3333)
 
 [node name="BugSoldier5" parent="." instance=ExtResource("4_1rfei")]
-position = Vector2(56, 63)
+position = Vector2(11, -160)
