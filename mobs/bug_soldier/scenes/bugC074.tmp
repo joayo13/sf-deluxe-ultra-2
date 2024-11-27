@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnt6vdgey4yqs"]
+
+[ext_resource type="Script" path="res://mobs/bug_soldier/scripts/bug_soldier.gd" id="1_iu6x3"]
+[ext_resource type="Texture2D" uid="uid://sygk5jghqflh" path="res://mobs/bug_soldier/sprites/bug-sheet.png" id="2_0sc8d"]
+[ext_resource type="PackedScene" uid="uid://csgqsgkkupe3t" path="res://ui/popups/scenes/floating_text.tscn" id="4_7dq3h"]
+[ext_resource type="PackedScene" uid="uid://lk2vw3cu6yct" path="res://components/scenes/hurtbox.tscn" id="5_w536s"]
+[ext_resource type="PackedScene" uid="uid://b05b3xtw1fnij" path="res://components/scenes/health_component.tscn" id="6_inwbd"]
+[ext_resource type="Script" path="res://weapons/ranged_weapons/scripts/RangedWeapon.gd" id="6_ws8s3"]
+[ext_resource type="Script" path="res://weapons/ranged_weapons/scripts/Projectile.gd" id="7_aifu8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5ym7"]
+radius = 5.09902
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i8hx"]
+size = Vector2(8, 6)
+
+[sub_resource type="Resource" id="Resource_uu75h"]
+script = ExtResource("7_aifu8")
+projectile_time = 1.0
+projectile_speed = 4.0
+projectile_damage_min = 1
+projectile_damage_max = 2
+projectile_crit_chance = 5.0
+projectile_crit_multiplier = 2.0
+projectile_angle = 90.0
+projectile_pierce_amount = 0.0
+layers = Array[int]([1])
+
+[node name="BugSoldier" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_iu6x3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e5ym7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0sc8d")
+hframes = 7
+
+[node name="Sprite2DTimer" type="Timer" parent="Sprite2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DirectionChangeTimer" type="Timer" parent="."]
+
+[node name="FloatingText" parent="." instance=ExtResource("4_7dq3h")]
+
+[node name="Hurtbox" parent="." instance=ExtResource("5_w536s")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_4i8hx")
+
+[node name="HealthComponent" parent="." instance=ExtResource("6_inwbd")]
+
+[node name="RangedWeapon" type="Node2D" parent="."]
+script = ExtResource("6_ws8s3")
+projectile = SubResource("Resource_uu75h")
+
+[connection signal="timeout" from="Sprite2D/Sprite2DTimer" to="." method="_on_sprite_2d_timer_timeout"]
+[connection signal="timeout" from="DirectionChangeTimer" to="." method="_on_direction_change_timer_timeout"]

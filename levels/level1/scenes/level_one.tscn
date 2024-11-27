@@ -1,15 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://3y84d7e6he5p"]
+[gd_scene load_steps=6 format=3 uid="uid://3y84d7e6he5p"]
 
 [ext_resource type="PackedScene" uid="uid://cpf7lpkecajsj" path="res://player/billy/scenes/player.tscn" id="2_qjh11"]
 [ext_resource type="PackedScene" uid="uid://bnt6vdgey4yqs" path="res://mobs/bug_soldier/scenes/bug_soldier.tscn" id="4_1rfei"]
 [ext_resource type="PackedScene" uid="uid://ck6hky8a0dg3c" path="res://camera/scenes/global_camera.tscn" id="5_qurwi"]
 [ext_resource type="Texture2D" uid="uid://cwndov61h5cus" path="res://levels/level1/sprites/black-background.png" id="5_tcgyx"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utqww"]
+bg_color = Color(0.436367, 0.2052, 0.76, 1)
+
 [node name="LevelOne" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-90, -300)
 repeat_size = Vector2(0, 450)
+
+[node name="Panel" type="Panel" parent="Parallax2D"]
+offset_right = 179.0
+offset_bottom = 450.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_utqww")
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("5_tcgyx")
