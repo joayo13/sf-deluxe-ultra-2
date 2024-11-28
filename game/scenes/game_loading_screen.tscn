@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://biq3tmo77ujnm"]
+
+[ext_resource type="Script" path="res://game/scenes/game_loading_screen.gd" id="1_r80df"]
+[ext_resource type="FontFile" uid="uid://28fnj7605yu1" path="res://ui/PressStart2P-Regular.ttf" id="2_8pgqs"]
+[ext_resource type="Texture2D" uid="uid://cwndov61h5cus" path="res://levels/level1/sprites/black-background.png" id="2_bdmlr"]
+[ext_resource type="Texture2D" uid="uid://byemisvnuqhot" path="res://game/sprites/loading_bar_inner.png" id="3_gtc70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0aiqq"]
+bg_color = Color(0.0784314, 0.627451, 0.180392, 1)
+
+[node name="GameLoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r80df")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -267.0
+offset_right = 96.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0aiqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bdmlr")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 13.0
+offset_right = 46.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+texture_progress = ExtResource("3_gtc70")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -4.0
+offset_right = 28.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_8pgqs")
+theme_override_font_sizes/font_size = 8
+text = "LOADING"

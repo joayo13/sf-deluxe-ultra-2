@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var floating_text: FloatingText = $FloatingText
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var sprite_2d_timer: Timer = $Sprite2D/Sprite2DTimer
-const BUG_DEATH_PARTICLES = preload("res://bug_death_particles.tscn")
+const BUG_DEATH_PARTICLES = preload("res://mobs/bug_soldier/scenes/bug_death_particles.tscn")
 # Set up the initial target speed and direction
 var target_speed: float = 0.0
 var direction: int = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhkxhpku0eqwo"]
+[gd_scene load_steps=3 format=3 uid="uid://c0phs5vkdq3qf"]
 
 [ext_resource type="Script" path="res://ui/popups/scripts/floating_text_xp.gd" id="1_0q76y"]
 [ext_resource type="FontFile" uid="uid://28fnj7605yu1" path="res://ui/PressStart2P-Regular.ttf" id="2_tskf7"]

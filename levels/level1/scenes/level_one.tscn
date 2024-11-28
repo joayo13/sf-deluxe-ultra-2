@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://3y84d7e6he5p"]
+[gd_scene load_steps=7 format=3 uid="uid://3y84d7e6he5p"]
 
 [ext_resource type="PackedScene" uid="uid://cpf7lpkecajsj" path="res://player/billy/scenes/player.tscn" id="2_qjh11"]
 [ext_resource type="PackedScene" uid="uid://bnt6vdgey4yqs" path="res://mobs/bug_soldier/scenes/bug_soldier.tscn" id="4_1rfei"]
 [ext_resource type="PackedScene" uid="uid://ck6hky8a0dg3c" path="res://camera/scenes/global_camera.tscn" id="5_qurwi"]
 [ext_resource type="Texture2D" uid="uid://cwndov61h5cus" path="res://levels/level1/sprites/black-background.png" id="5_tcgyx"]
+[ext_resource type="Texture2D" uid="uid://bhsqhajkx7xp4" path="res://ui/menus/sprites/menu_button_large.png" id="5_yfsoe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utqww"]
-bg_color = Color(0.031675, 0.07, 0.0189, 1)
+bg_color = Color(0.0784314, 0.627451, 0.180392, 1)
 
 [node name="LevelOne" type="Node2D"]
 
@@ -58,3 +59,7 @@ position = Vector2(-10, -90)
 
 [node name="BugSoldier10" parent="." instance=ExtResource("4_1rfei")]
 position = Vector2(-59, -130)
+
+[node name="MenuButtonLarge" type="Sprite2D" parent="."]
+position = Vector2(187, -37)
+texture = ExtResource("5_yfsoe")

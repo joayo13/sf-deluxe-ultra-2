@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://deex7eu7nfawj"]
 
-[ext_resource type="Script" path="res://bug_death_particles.gd" id="1_owdlu"]
+[ext_resource type="Script" path="res://mobs/bug_soldier/scripts/bug_death_particles.gd" id="1_huqky"]
 
 [node name="BugDeathParticles" type="CPUParticles2D"]
 emitting = false
@@ -16,6 +16,6 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 150.0
 initial_velocity_max = 250.0
 color = Color(0.34902, 0.756863, 0.207843, 1)
-script = ExtResource("1_owdlu")
+script = ExtResource("1_huqky")
 
 [connection signal="finished" from="." to="." method="_on_finished"]

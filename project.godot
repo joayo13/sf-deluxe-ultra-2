@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Superfart Deluxe Ultra 2"
-run/main_scene="res://levels/level1/scenes/level_one.tscn"
+run/main_scene="res://game/scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*res://global_scripts/Game.gd"
+Game="*res://global_scripts/GameManager.gd"
 
 [debug]
 
