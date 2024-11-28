@@ -12,7 +12,7 @@ bg_color = Color(0.0784314, 0.627451, 0.180392, 1)
 [node name="LevelOne" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-90, -300)
+scroll_offset = Vector2(-90, -345)
 repeat_size = Vector2(0, 450)
 
 [node name="Panel" type="Panel" parent="Parallax2D"]
