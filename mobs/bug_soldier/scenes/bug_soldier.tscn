@@ -54,6 +54,7 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_4i8hx")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_inwbd")]
+health = 5.0
 
 [node name="RangedWeapon" type="Node2D" parent="."]
 script = ExtResource("6_ws8s3")

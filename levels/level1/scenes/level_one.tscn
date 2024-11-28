@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwndov61h5cus" path="res://levels/level1/sprites/black-background.png" id="5_tcgyx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utqww"]
-bg_color = Color(0.436367, 0.2052, 0.76, 1)
+bg_color = Color(0.031675, 0.07, 0.0189, 1)
 
 [node name="LevelOne" type="Node2D"]
 
@@ -43,3 +43,18 @@ position = Vector2(57, -89.3333)
 
 [node name="BugSoldier5" parent="." instance=ExtResource("4_1rfei")]
 position = Vector2(11, -160)
+
+[node name="BugSoldier6" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(-52, -268)
+
+[node name="BugSoldier7" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(-29, -169)
+
+[node name="BugSoldier8" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(23, -247)
+
+[node name="BugSoldier9" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(-10, -90)
+
+[node name="BugSoldier10" parent="." instance=ExtResource("4_1rfei")]
+position = Vector2(-59, -130)

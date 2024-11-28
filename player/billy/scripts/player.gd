@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var farticles: CPUParticles2D = $Farticles
 @onready var hurtbox: Area2D = $Hurtbox
 var max_speed_y = 50
-var max_speed_x = 25.0 
+var max_speed_x = 50.0 
 
 func _ready():
 	if hurtbox != null:

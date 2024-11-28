@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhkxhpku0eqwo"]
 
-[ext_resource type="Script" path="res://ui/popups/scripts/floating_text_gold.gd" id="1_cq7sr"]
-[ext_resource type="FontFile" uid="uid://28fnj7605yu1" path="res://ui/PressStart2P-Regular.ttf" id="2_ko0ik"]
+[ext_resource type="Script" path="res://ui/popups/scripts/floating_text_xp.gd" id="1_0q76y"]
+[ext_resource type="FontFile" uid="uid://28fnj7605yu1" path="res://ui/PressStart2P-Regular.ttf" id="2_tskf7"]
 
-[node name="FloatingTextGold" type="Control"]
+[node name="FloatingTextXp" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_cq7sr")
+script = ExtResource("1_0q76y")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -33,5 +33,5 @@ scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.870588, 0.717647, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.0866667, 0.4, 0, 1)
-theme_override_fonts/font = ExtResource("2_ko0ik")
+theme_override_fonts/font = ExtResource("2_tskf7")
 theme_override_font_sizes/font_size = 8

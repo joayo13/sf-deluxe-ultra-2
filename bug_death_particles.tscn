@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://deex7eu7nfawj"]
+
+[ext_resource type="Script" path="res://bug_death_particles.gd" id="1_owdlu"]
+
+[node name="BugDeathParticles" type="CPUParticles2D"]
+emitting = false
+amount = 50
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.9
+lifetime_randomness = 0.7
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+color = Color(0.34902, 0.756863, 0.207843, 1)
+script = ExtResource("1_owdlu")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
