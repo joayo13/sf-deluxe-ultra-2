@@ -17,7 +17,7 @@ size = Vector2(8, 6)
 [sub_resource type="Resource" id="Resource_uu75h"]
 script = ExtResource("7_aifu8")
 projectile_time = 1.0
-projectile_speed = 4.0
+projectile_speed = 250.0
 projectile_damage_min = 1
 projectile_damage_max = 2
 projectile_crit_chance = 5.0

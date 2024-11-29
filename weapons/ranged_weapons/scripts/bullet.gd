@@ -20,7 +20,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void: 
-	position += direction * projectile_data.projectile_speed
+	linear_velocity = direction * projectile_data.projectile_speed
 
 func _on_despawn_timer_timeout() -> void:
 	cpu_particles_2d.one_shot = true

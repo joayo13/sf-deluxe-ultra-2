@@ -16,5 +16,9 @@ func _process(_delta: float) -> void:
 	texture_progress_bar.value = progress[0] * 100
 	if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
 		var new_scene = ResourceLoader.load_threaded_get(scene_name)
-		get_tree().change_scene_to_packed(new_scene)
+		if new_scene and new_scene is PackedScene:
+			var new_node = new_scene.instantiate()
+			if new_node:
+				get_parent().add_child(new_node)
+				self.queue_free()
 	

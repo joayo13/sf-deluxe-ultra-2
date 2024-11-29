@@ -35,7 +35,7 @@ func hit(attack: Attack):
 		sprite_2d.frame = randi_range(1,6)
 		sprite_2d_timer.start()
 func dead():
-	Game.add_experience(15)
+	GameManager.add_experience(15)
 	floating_text.create_floating_text_xp(15)
 	var particles = BUG_DEATH_PARTICLES.instantiate()
 	particles.global_position = self.global_position

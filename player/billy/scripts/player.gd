@@ -13,12 +13,13 @@ func _ready():
 		ranged_weapon.shooting.connect(play_shoot_anim)
 	else:
 		print("weapon_slot is null, unable to connect.")
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and event.pressed:
 		var player_screen_coordinates = self.get_global_transform_with_canvas().origin
 		var angle_between_player_and_event = player_screen_coordinates.angle_to_point(event.position)
 		var angle_degrees = rad_to_deg(angle_between_player_and_event) * -1
 		ranged_weapon.shoot(angle_degrees)
+	
 		
 func play_shoot_anim(_angle):
 	pass

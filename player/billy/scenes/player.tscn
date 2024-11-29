@@ -28,7 +28,7 @@ size = Vector2(8, 8)
 [sub_resource type="Resource" id="Resource_m76h3"]
 script = ExtResource("7_kw52h")
 projectile_time = 1.0
-projectile_speed = 4.0
+projectile_speed = 250.0
 projectile_damage_min = 1
 projectile_damage_max = 2
 projectile_crit_chance = 5.0
