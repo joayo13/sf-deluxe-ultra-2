@@ -57,7 +57,7 @@ spread = 21.37
 gravity = Vector2(0, 50)
 initial_velocity_min = 20.0
 initial_velocity_max = 40.0
-color = Color(0.34902, 0.756863, 0.207843, 1)
+color = Color(1, 0.988235, 0.25098, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fyxop")
